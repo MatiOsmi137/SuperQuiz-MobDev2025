@@ -1,3 +1,1 @@
-Demoapplikcation Quiz
-
-Hier finden SIe jeweils den Letztstand aus der LV.
+Die erweiterte Version von dem Super Quiz aus der LV.
