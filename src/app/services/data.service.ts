@@ -13,18 +13,9 @@ export class DataService {
   private http: HttpClient = inject(HttpClient);
   public currentQuiz: Quiz = {id: '', quizName: 'newQuiz', questions: []};
 
-  constructor() { 
-    /*this.currentQuiz.questions.push({
-      id: '1',
-      title: 'What is the capital of France?',
-      a1: 'Paris',
-      a2: 'London',
-      a3: 'Berlin',
-      a4: 'Madrid',
-      correct: 1
-    })*/
+  constructor() 
+  { 
     this.loadQuiz();
-    //this.loadQuizFromJSON();
     console.log("Hallo3");
   }
 
@@ -36,18 +27,6 @@ export class DataService {
         console.log("oje: ", data);
     });
   }
-
-  /*public loadQuiz() {
-    let returnPromise = Preferences.get({key: 'GrischaSuperQuiz202503'});
-    returnPromise.then((q)=>{
-      console.log("Hallo1");
-      if (q.value)
-        this.currentQuiz = JSON.parse(q.value) as Quiz;
-    }).catch((e)=>{
-      console.log(e);
-    });
-    console.log("Hallo2");
-  }*/
 
   public async loadQuiz() {
     try {
@@ -99,11 +78,11 @@ export class DataService {
     this.saveQuiz();
   }
   public shuffleArray<T>(array: T[]): T[] {
-    let shuffled = [...array]; // Create a copy to avoid mutating the original array
+    let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) 
     {
-      const j = Math.floor(Math.random() * (i + 1)); // Get a random index
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Swap elements
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
 }

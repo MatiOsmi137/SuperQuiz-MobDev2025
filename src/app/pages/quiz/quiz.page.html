@@ -13,7 +13,18 @@
       <ion-title size="large">Quiz</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-item>
-    <ion-label position="fixed">{{currentElement.title}}</ion-label>
-  </ion-item>
+  <ion-card *ngIf="currentElement">
+    <ion-card-header>
+      <ion-card-title>
+        <p>{{ currentElement.title }}</p>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-button (click)="answer(1)">{{ currentElement.a1 }}</ion-button>
+      <ion-button (click)="answer(2)">{{ currentElement.a2 }}</ion-button>
+      <ion-button (click)="answer(3)">{{ currentElement.a3 }}</ion-button>
+      <ion-button (click)="answer(4)">{{ currentElement.a4 }}</ion-button>
+    </ion-list>
+    <ion-label>Current score: {{userScore}}</ion-label>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,21 @@
+.question-text {
+    white-space: normal; /* Ensures text wraps correctly */
+    word-break: break-word; /* Prevents words from splitting mid-character */
+    text-align: center; /* Ensures better alignment */
+    font-size: 1.2rem; /* Adjust as needed */
+}
+
+ion-label {
+    white-space: normal; /* Ensures text wraps naturally */
+    word-break: break-word; /* Ensures words break properly if necessary */
+    text-align: left; /* Optional: Centers the question text */
+    font-size: 1.2rem; /* Adjust font size if needed */
+    display: block;
+  }
+
+ion-list
+{
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add spacing between buttons */
+}
